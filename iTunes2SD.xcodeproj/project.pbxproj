@@ -53,6 +53,7 @@
 		079227FE24423A5500847F4D /* iTunes2SD */ = {
 			isa = PBXGroup;
 			children = (
+				0792280F244249C400847F4D /* CollectionViewControllers */,
 				079227FF24423A5500847F4D /* AppDelegate.swift */,
 				0792280124423A5500847F4D /* ViewController.swift */,
 				0792280324423A5600847F4D /* Assets.xcassets */,
@@ -61,6 +62,13 @@
 				0792280924423A5600847F4D /* iTunes2SD.entitlements */,
 			);
 			path = iTunes2SD;
+			sourceTree = "<group>";
+		};
+		0792280F244249C400847F4D /* CollectionViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CollectionViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -279,6 +287,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_BUNDLE_IDENTIFIER = com.slawagurevich.iTunes2SD;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -299,6 +308,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_BUNDLE_IDENTIFIER = com.slawagurevich.iTunes2SD;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
