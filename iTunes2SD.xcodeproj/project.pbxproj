@@ -11,6 +11,11 @@
 		0792280224423A5500847F4D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0792280124423A5500847F4D /* ViewController.swift */; };
 		0792280424423A5600847F4D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0792280324423A5600847F4D /* Assets.xcassets */; };
 		0792280724423A5600847F4D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0792280524423A5600847F4D /* Main.storyboard */; };
+		07AE7BD52443C20E002A64C4 /* UserPreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AE7BD42443C20E002A64C4 /* UserPreferences.swift */; };
+		07F50C2D24431704005B103D /* PlaylistsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F50C2C24431704005B103D /* PlaylistsTableView.swift */; };
+		07F50C2F2443170F005B103D /* ArtistsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F50C2E2443170F005B103D /* ArtistsTableView.swift */; };
+		07F50C3124431724005B103D /* AlbumsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F50C3024431724005B103D /* AlbumsTableView.swift */; };
+		07F50C3424431746005B103D /* MusicLibraryHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F50C3324431746005B103D /* MusicLibraryHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +26,11 @@
 		0792280624423A5600847F4D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0792280824423A5600847F4D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0792280924423A5600847F4D /* iTunes2SD.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iTunes2SD.entitlements; sourceTree = "<group>"; };
+		07AE7BD42443C20E002A64C4 /* UserPreferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPreferences.swift; sourceTree = "<group>"; };
+		07F50C2C24431704005B103D /* PlaylistsTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistsTableView.swift; sourceTree = "<group>"; };
+		07F50C2E2443170F005B103D /* ArtistsTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistsTableView.swift; sourceTree = "<group>"; };
+		07F50C3024431724005B103D /* AlbumsTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsTableView.swift; sourceTree = "<group>"; };
+		07F50C3324431746005B103D /* MusicLibraryHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicLibraryHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,9 +63,10 @@
 		079227FE24423A5500847F4D /* iTunes2SD */ = {
 			isa = PBXGroup;
 			children = (
+				07AE7BD32443C1FE002A64C4 /* Settings */,
+				07F50C3224431730005B103D /* HelperClasses */,
 				0792280F244249C400847F4D /* CollectionViewControllers */,
 				079227FF24423A5500847F4D /* AppDelegate.swift */,
-				0792280124423A5500847F4D /* ViewController.swift */,
 				0792280324423A5600847F4D /* Assets.xcassets */,
 				0792280524423A5600847F4D /* Main.storyboard */,
 				0792280824423A5600847F4D /* Info.plist */,
@@ -67,8 +78,28 @@
 		0792280F244249C400847F4D /* CollectionViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				07F50C2C24431704005B103D /* PlaylistsTableView.swift */,
+				07F50C2E2443170F005B103D /* ArtistsTableView.swift */,
+				07F50C3024431724005B103D /* AlbumsTableView.swift */,
+				0792280124423A5500847F4D /* ViewController.swift */,
 			);
 			path = CollectionViewControllers;
+			sourceTree = "<group>";
+		};
+		07AE7BD32443C1FE002A64C4 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				07AE7BD42443C20E002A64C4 /* UserPreferences.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		07F50C3224431730005B103D /* HelperClasses */ = {
+			isa = PBXGroup;
+			children = (
+				07F50C3324431746005B103D /* MusicLibraryHelper.swift */,
+			);
+			path = HelperClasses;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,8 +172,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07F50C3124431724005B103D /* AlbumsTableView.swift in Sources */,
+				07AE7BD52443C20E002A64C4 /* UserPreferences.swift in Sources */,
 				0792280224423A5500847F4D /* ViewController.swift in Sources */,
+				07F50C2F2443170F005B103D /* ArtistsTableView.swift in Sources */,
 				0792280024423A5500847F4D /* AppDelegate.swift in Sources */,
+				07F50C2D24431704005B103D /* PlaylistsTableView.swift in Sources */,
+				07F50C3424431746005B103D /* MusicLibraryHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,7 +323,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				PRODUCT_BUNDLE_IDENTIFIER = com.slawagurevich.iTunes2SD;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -308,7 +344,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				PRODUCT_BUNDLE_IDENTIFIER = com.slawagurevich.iTunes2SD;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
