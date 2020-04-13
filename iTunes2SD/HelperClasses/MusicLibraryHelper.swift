@@ -27,6 +27,10 @@ class MusicLibraryHelper {
         return iTunesLibrary?.allPlaylists ?? []
     }
     
+    func reloadData() -> Bool {
+        return iTunesLibrary?.reloadData() ?? false
+    }
+    
     func getAllAlbums() -> [String] {
         let allMediaFiles:[ITLibMediaItem] = iTunesLibrary?.allMediaItems ?? []
         var allAlbums:[String] = []

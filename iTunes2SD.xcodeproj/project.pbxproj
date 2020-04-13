@@ -16,6 +16,8 @@
 		07E58BB82444889600E44259 /* CheckboxListItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07E58BB62444889600E44259 /* CheckboxListItem.xib */; };
 		07E58BBB2444B1BA00E44259 /* LoadableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E58BBA2444B1BA00E44259 /* LoadableView.swift */; };
 		07E58BBD2444E1B400E44259 /* FileHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E58BBC2444E1B400E44259 /* FileHelper.swift */; };
+		07E58BC02444F80900E44259 /* NotificationCenter+iTunes2SD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E58BBF2444F80900E44259 /* NotificationCenter+iTunes2SD.swift */; };
+		07E58BC22444F99B00E44259 /* NSNotification+iTunes2SD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E58BC12444F99B00E44259 /* NSNotification+iTunes2SD.swift */; };
 		07F50C2D24431704005B103D /* PlaylistsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F50C2C24431704005B103D /* PlaylistsTableView.swift */; };
 		07F50C2F2443170F005B103D /* ArtistsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F50C2E2443170F005B103D /* ArtistsTableView.swift */; };
 		07F50C3124431724005B103D /* AlbumsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F50C3024431724005B103D /* AlbumsTableView.swift */; };
@@ -35,6 +37,8 @@
 		07E58BB62444889600E44259 /* CheckboxListItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CheckboxListItem.xib; sourceTree = "<group>"; };
 		07E58BBA2444B1BA00E44259 /* LoadableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadableView.swift; sourceTree = "<group>"; };
 		07E58BBC2444E1B400E44259 /* FileHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileHelper.swift; sourceTree = "<group>"; };
+		07E58BBF2444F80900E44259 /* NotificationCenter+iTunes2SD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NotificationCenter+iTunes2SD.swift"; sourceTree = "<group>"; };
+		07E58BC12444F99B00E44259 /* NSNotification+iTunes2SD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSNotification+iTunes2SD.swift"; sourceTree = "<group>"; };
 		07F50C2C24431704005B103D /* PlaylistsTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistsTableView.swift; sourceTree = "<group>"; };
 		07F50C2E2443170F005B103D /* ArtistsTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistsTableView.swift; sourceTree = "<group>"; };
 		07F50C3024431724005B103D /* AlbumsTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsTableView.swift; sourceTree = "<group>"; };
@@ -71,6 +75,7 @@
 		079227FE24423A5500847F4D /* iTunes2SD */ = {
 			isa = PBXGroup;
 			children = (
+				07E58BBE2444F7E700E44259 /* Extensions */,
 				07E58BB92444B1AE00E44259 /* CustomViews */,
 				07AE7BD32443C1FE002A64C4 /* Settings */,
 				07F50C3224431730005B103D /* HelperClasses */,
@@ -119,6 +124,15 @@
 				07E58BBA2444B1BA00E44259 /* LoadableView.swift */,
 			);
 			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		07E58BBE2444F7E700E44259 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				07E58BBF2444F80900E44259 /* NotificationCenter+iTunes2SD.swift */,
+				07E58BC12444F99B00E44259 /* NSNotification+iTunes2SD.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		07F50C3224431730005B103D /* HelperClasses */ = {
@@ -201,6 +215,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07E58BC02444F80900E44259 /* NotificationCenter+iTunes2SD.swift in Sources */,
+				07E58BC22444F99B00E44259 /* NSNotification+iTunes2SD.swift in Sources */,
 				07F50C3124431724005B103D /* AlbumsTableView.swift in Sources */,
 				07AE7BD52443C20E002A64C4 /* UserPreferences.swift in Sources */,
 				0792280224423A5500847F4D /* ViewController.swift in Sources */,

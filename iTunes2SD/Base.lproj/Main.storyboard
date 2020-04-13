@@ -1234,6 +1234,7 @@
                         <outlet property="b_removeSongsNotInPlaylist" destination="gAd-iI-LBa" id="hgM-ay-vMI"/>
                         <outlet property="b_useExtendedPlaylistFormat" destination="BT0-Wl-3Aa" id="qDg-fD-fii"/>
                         <outlet property="i_folderDestination" destination="0lt-bT-yXO" id="TXL-Ud-1C9"/>
+                        <outlet property="l_progressBar" destination="fyU-XT-Z5Z" id="QmB-0o-zz3"/>
                         <outlet property="v_albumTableView" destination="hlu-po-zbK" id="8LA-YI-aNh"/>
                         <outlet property="v_artistTableView" destination="nnf-33-tAh" id="HHv-bn-THS"/>
                         <outlet property="v_darkenerBehindSourceSelection" destination="F5Y-Rr-zfF" id="8hX-XW-XSZ"/>

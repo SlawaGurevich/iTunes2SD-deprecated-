@@ -32,6 +32,10 @@ class ViewController: NSViewController {
     
     @IBOutlet weak var b_playlistFormat: NSPopUpButton!
     
+    @IBOutlet weak var l_progressBar: NSProgressIndicator!
+    
+    var changeObservers: [NSObjectProtocol] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -142,26 +146,60 @@ class ViewController: NSViewController {
         syncPlaylists()
     }
     
-    func syncPlaylists() {
-        var selectedPlaylists:[String] = []
-        for index in 0..<v_playlistTableView.numberOfRows {
-            let view = v_playlistTableView.view(atColumn: 0, row: index, makeIfNecessary: false) as! CheckboxListItem
-            
-            if view.b_playlistCheck.state == .on {
-                selectedPlaylists.append(view.b_playlistCheck.title)
+    func resetSlider(value: Double) {
+        l_progressBar.maxValue = value
+        l_progressBar.doubleValue = 0
+    }
+    
+    func addNotificationObservers() {
+        changeObservers.append(
+            NotificationCenter.observe(name: .ItemCopied) {
+                if(self.l_progressBar.doubleValue < self.l_progressBar.maxValue) {
+                    self.l_progressBar.increment(by: 1.0)
+                    print("copiedItem")
+                }
             }
+        )
+    }
+    
+    func removeNotificationOberservers() {
+        for observer in changeObservers {
+            NotificationCenter.default.removeObserver(observer)
         }
-        
-        let selectedPlaylistArray = MusicLibraryHelper.shared.getAllPlaylists().filter {
-            selectedPlaylists.contains($0.name)
-        }
-        
-        
-        // MARK: - Perform file copy operations
-        FileHelper.shared.createPlaylistFiles(playlists: selectedPlaylistArray)
-        
-        if !UserPreferences.onlyExportPlaylists {
-            FileHelper.shared.copyPlaylistFiles(playlists: selectedPlaylistArray)
+    }
+    
+    func syncPlaylists() {
+        if MusicLibraryHelper.shared.reloadData() {
+            var selectedPlaylists:[String] = []
+            for index in 0..<v_playlistTableView.numberOfRows {
+                let view = v_playlistTableView.view(atColumn: 0, row: index, makeIfNecessary: false) as! CheckboxListItem
+                
+                if view.b_playlistCheck.state == .on {
+                    selectedPlaylists.append(view.b_playlistCheck.title)
+                }
+            }
+            
+            let selectedPlaylistArray = MusicLibraryHelper.shared.getAllPlaylists().filter {
+                selectedPlaylists.contains($0.name)
+            }
+            
+            // Reset the slider
+            var sliderMaxWidth: Double = 0
+            for playlist in selectedPlaylistArray {
+                sliderMaxWidth += Double(playlist.items.count)
+            }
+            resetSlider(value: sliderMaxWidth)
+            
+            addNotificationObservers()
+            
+            // Perform file copy operations
+            FileHelper.shared.createPlaylistFiles(playlists: selectedPlaylistArray)
+            
+            if !UserPreferences.onlyExportPlaylists {
+                FileHelper.shared.copyPlaylistFiles(playlists: selectedPlaylistArray)
+            }
+            
+            removeNotificationOberservers()
         }
     }
 }

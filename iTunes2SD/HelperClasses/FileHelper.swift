@@ -27,6 +27,7 @@ class FileHelper {
                         try FileManager.default.createDirectory(atPath: filePath.deletingLastPathComponent().path, withIntermediateDirectories: true)
                         try FileManager.default.copyItem(atPath: location.path, toPath: filePath.path)
                     }
+                    NotificationCenter.post(name: .ItemCopied)
                 } catch {
                     print(error.localizedDescription)
                 }
@@ -40,7 +41,7 @@ class FileHelper {
             print(playlistFileName)
             let playlistFileLocation = URL(fileURLWithPath: UserPreferences.folderDestination).appendingPathComponent(playlistFileName)
             
-            var fileOutput = UserPreferences.useExtendedPlaylistFormat ? "#EXTM3U\n" : ""
+            var fileOutput = UserPreferences.useExtendedPlaylistFormat ? "#EXTM3U\n\n" : ""
             
             for track in playlist.items {
                 if UserPreferences.useExtendedPlaylistFormat {
@@ -50,8 +51,7 @@ class FileHelper {
                 guard let artist = track.artist?.name, let album = track.album.title, let location = track.location else {
                     return
                 }
-                fileOutput.append("\(artist)/\(album)/\(location.lastPathComponent)\n\n")
-                
+                fileOutput.append("\(artist)/\(album)/\(location.lastPathComponent)\n\n")          
             }
             
             do {
