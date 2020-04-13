@@ -1044,6 +1044,9 @@
                                                                 <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                             </textFieldCell>
+                                                            <connections>
+                                                                <action selector="insertedDestination:" target="XfG-lQ-9wD" id="LtQ-dZ-xbp"/>
+                                                            </connections>
                                                         </textField>
                                                         <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="GWt-i6-Paa">
                                                             <rect key="frame" x="1232" y="8" width="87" height="32"/>
@@ -1051,6 +1054,9 @@
                                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                                 <font key="font" metaFont="system"/>
                                                             </buttonCell>
+                                                            <connections>
+                                                                <action selector="chooseDestinationClicked:" target="XfG-lQ-9wD" id="bou-lD-evC"/>
+                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                     <constraints>
@@ -1151,7 +1157,7 @@
                                 </buttonCell>
                             </button>
                             <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Ct8-GI-DvV">
-                                <rect key="frame" x="698" y="177" width="618" height="25"/>
+                                <rect key="frame" x="698" y="177" width="74" height="25"/>
                                 <popUpButtonCell key="cell" type="push" title="m3u" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="Hag-qq-CHI" id="ug8-L2-HbX">
                                     <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -1177,7 +1183,7 @@
                             <constraint firstItem="4ec-Rf-Eyc" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="8ge-nK-To0"/>
                             <constraint firstItem="4ec-Rf-Eyc" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="8v7-6e-oo3"/>
                             <constraint firstItem="8BZ-QO-jnV" firstAttribute="top" secondItem="9bf-Eb-I8p" secondAttribute="bottom" id="Hnd-l0-qUl"/>
-                            <constraint firstAttribute="trailing" secondItem="Ct8-GI-DvV" secondAttribute="trailing" constant="20" id="HtH-Jh-N3I"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Ct8-GI-DvV" secondAttribute="trailing" constant="20" id="HtH-Jh-N3I"/>
                             <constraint firstItem="rfL-oM-uFj" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="JVq-4e-Ng2"/>
                             <constraint firstItem="9bf-Eb-I8p" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="KuD-ka-jdE"/>
                             <constraint firstItem="rfL-oM-uFj" firstAttribute="top" secondItem="F5Y-Rr-zfF" secondAttribute="bottom" constant="20" id="MNA-cA-RlQ"/>
@@ -1208,6 +1214,7 @@
                         <outlet property="b_playlistFormat" destination="Ct8-GI-DvV" id="WS0-UF-XKW"/>
                         <outlet property="b_removeSongsNotInPlaylist" destination="gAd-iI-LBa" id="hgM-ay-vMI"/>
                         <outlet property="b_useExtendedPlaylistFormat" destination="BT0-Wl-3Aa" id="qDg-fD-fii"/>
+                        <outlet property="i_folderDestination" destination="0lt-bT-yXO" id="TXL-Ud-1C9"/>
                         <outlet property="v_albumTableView" destination="hlu-po-zbK" id="8LA-YI-aNh"/>
                         <outlet property="v_artistTableView" destination="nnf-33-tAh" id="HHv-bn-THS"/>
                         <outlet property="v_darkenerBehindSourceSelection" destination="F5Y-Rr-zfF" id="8hX-XW-XSZ"/>

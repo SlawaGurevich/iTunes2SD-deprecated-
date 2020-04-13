@@ -14,6 +14,7 @@ class UserPreferences {
         case onlyExportPlaylists
         case removeSongsNotInPlaylist
         case playlistFormat
+        case folderDestination
     }
     
     enum playlistFormats: String {
@@ -34,7 +35,7 @@ class UserPreferences {
             return self.readBool(fromKey: self.Keys.useExtendedPlaylistFormat.rawValue) ?? true
         }
         set {
-            self.write(value: newValue, toKey: self.Keys.useExtendedPlaylistFormat  .rawValue)
+            self.write(value: newValue, toKey: self.Keys.useExtendedPlaylistFormat.rawValue)
         }
     }
     
@@ -53,6 +54,15 @@ class UserPreferences {
         }
         set {
             self.write(value: newValue, toKey: self.Keys.removeSongsNotInPlaylist.rawValue)
+        }
+    }
+    
+    class var folderDestination: String {
+        get {
+            return self.readString(fromKey: self.Keys.folderDestination.rawValue) ?? "/"
+        }
+        set {
+            self.write(value: newValue, toKey: self.Keys.folderDestination.rawValue)
         }
     }
     

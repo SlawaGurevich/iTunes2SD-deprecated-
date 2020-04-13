@@ -9,10 +9,12 @@
 import Cocoa
 
 class ViewController: NSViewController {
+    // MARK: - Main views
     @IBOutlet weak var v_playlistTableView: NSTableView!
     @IBOutlet weak var v_artistTableView: NSTableView!
     @IBOutlet weak var v_albumTableView: NSTableView!
     
+    // MARK: - Destination
     @IBOutlet weak var b_folderButton: NSButton!
     @IBOutlet weak var b_phoneButton: NSButton!
     @IBOutlet weak var v_folderTab: NSView!
@@ -21,6 +23,9 @@ class ViewController: NSViewController {
     
     @IBOutlet weak var v_darkenerBehindSourceSelection: NSView!
     
+    @IBOutlet weak var i_folderDestination: NSTextField!
+    
+    // MARK: - Option View
     @IBOutlet weak var b_useExtendedPlaylistFormat: NSButton!
     @IBOutlet weak var b_onlyExportPlaylists: NSButton!
     @IBOutlet weak var b_removeSongsNotInPlaylist: NSButton!
@@ -29,17 +34,6 @@ class ViewController: NSViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        b_useExtendedPlaylistFormat.state = UserPreferences.useExtendedPlaylistFormat ? .on : .off
-        b_onlyExportPlaylists.state = UserPreferences.onlyExportPlaylists ? .on : .off
-        b_removeSongsNotInPlaylist.state = UserPreferences.removeSongsNotInPlaylist ? .on : .off
-        
-        switch(UserPreferences.playlistFormat) {
-            case .m3u:
-                b_playlistFormat.selectItem(withTitle: "m3u")
-            case .m3u8:
-                b_playlistFormat.selectItem(withTitle: "m3u8")
-        }
 
         v_playlistTableView.delegate = v_playlistTableView as? NSTableViewDelegate
         v_playlistTableView.dataSource = v_playlistTableView as? NSTableViewDataSource
@@ -65,10 +59,21 @@ class ViewController: NSViewController {
     }
     
     func initialSetup() {
-        
-        
         b_folderButton.image = v_sourceTabbedView.indexOfTabViewItem(v_sourceTabbedView.selectedTabViewItem!) == 0 ? NSImage(named: NSImage.Name("bFolderSelected")) : NSImage(named: NSImage.Name("bFolderNormal"))
         b_phoneButton.image = v_sourceTabbedView.indexOfTabViewItem(v_sourceTabbedView.selectedTabViewItem!) == 1 ? NSImage(named: NSImage.Name("bPhoneSelected")) : NSImage(named: NSImage.Name("bPhoneNormal"))
+        
+        b_useExtendedPlaylistFormat.state = UserPreferences.useExtendedPlaylistFormat ? .on : .off
+        b_onlyExportPlaylists.state = UserPreferences.onlyExportPlaylists ? .on : .off
+        b_removeSongsNotInPlaylist.state = UserPreferences.removeSongsNotInPlaylist ? .on : .off
+        
+        i_folderDestination.stringValue = UserPreferences.folderDestination
+        
+        switch(UserPreferences.playlistFormat) {
+            case .m3u:
+                b_playlistFormat.selectItem(withTitle: "m3u")
+            case .m3u8:
+                b_playlistFormat.selectItem(withTitle: "m3u8")
+        }
     }
     
     override func viewDidLayout() {
@@ -84,7 +89,31 @@ class ViewController: NSViewController {
         // Update the view, if already loaded.
         }
     }
-
+    
+    @IBAction func insertedDestination(_ sender: NSTextField) {
+        if sender.stringValue != "" {
+            UserPreferences.folderDestination = sender.stringValue
+        }
+    }
+    
+    @IBAction func chooseDestinationClicked(_ sender: NSButton) {
+        let panel = NSOpenPanel()
+        panel.showsResizeIndicator = true
+        panel.canChooseFiles = false
+        panel.canCreateDirectories = true
+        panel.canChooseDirectories = true
+        panel.allowsMultipleSelection = false
+        
+        if ( panel.runModal() == NSApplication.ModalResponse.OK ) {
+            if let result = panel.url {
+                i_folderDestination.stringValue = result.path
+                UserPreferences.folderDestination = result.path
+            }
+        } else {
+            return
+        }
+    }
+    
     //MARK: - Opttion Handler
     @IBAction func useExtendedPlaylistFormatClicked(_ sender: NSButton) {
         UserPreferences.useExtendedPlaylistFormat = sender.state == .on
