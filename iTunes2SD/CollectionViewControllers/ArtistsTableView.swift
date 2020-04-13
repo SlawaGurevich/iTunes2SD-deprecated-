@@ -16,10 +16,12 @@ class ArtistsTableView: NSTableView {
 extension ArtistsTableView: NSTableViewDelegate {
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
         let artists = MusicLibraryHelper.shared.getAllArtists()
-        guard let cellView = tableView.makeView(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "ArtistCell"), owner: self) as? NSTableCellView else { return nil }
         
-        cellView.textField?.stringValue = artists[row]
-        return cellView
+        let view = CheckboxListItem()
+        view.i_itemCounter.isHidden = true
+        view.b_playlistCheck.title = artists[row]
+
+        return view
     }
 }
 

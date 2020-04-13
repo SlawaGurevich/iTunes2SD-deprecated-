@@ -15,10 +15,12 @@ class AlbumsTableView: NSTableView {
 extension AlbumsTableView: NSTableViewDelegate {
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
         let albums = MusicLibraryHelper.shared.getAllAlbums()
-        guard let cellView = tableView.makeView(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "AlbumCell"), owner: self) as? NSTableCellView else { return nil }
         
-        cellView.textField?.stringValue = albums[row]
-        return cellView
+        let view = CheckboxListItem()
+        view.i_itemCounter.isHidden = true
+        view.b_playlistCheck.title = albums[row]
+
+        return view
     }
 }
 

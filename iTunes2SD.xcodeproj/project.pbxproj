@@ -12,6 +12,9 @@
 		0792280424423A5600847F4D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0792280324423A5600847F4D /* Assets.xcassets */; };
 		0792280724423A5600847F4D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0792280524423A5600847F4D /* Main.storyboard */; };
 		07AE7BD52443C20E002A64C4 /* UserPreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AE7BD42443C20E002A64C4 /* UserPreferences.swift */; };
+		07E58BB72444889600E44259 /* CheckboxListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E58BB52444889600E44259 /* CheckboxListItem.swift */; };
+		07E58BB82444889600E44259 /* CheckboxListItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07E58BB62444889600E44259 /* CheckboxListItem.xib */; };
+		07E58BBB2444B1BA00E44259 /* LoadableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E58BBA2444B1BA00E44259 /* LoadableView.swift */; };
 		07F50C2D24431704005B103D /* PlaylistsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F50C2C24431704005B103D /* PlaylistsTableView.swift */; };
 		07F50C2F2443170F005B103D /* ArtistsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F50C2E2443170F005B103D /* ArtistsTableView.swift */; };
 		07F50C3124431724005B103D /* AlbumsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F50C3024431724005B103D /* AlbumsTableView.swift */; };
@@ -27,6 +30,9 @@
 		0792280824423A5600847F4D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0792280924423A5600847F4D /* iTunes2SD.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iTunes2SD.entitlements; sourceTree = "<group>"; };
 		07AE7BD42443C20E002A64C4 /* UserPreferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPreferences.swift; sourceTree = "<group>"; };
+		07E58BB52444889600E44259 /* CheckboxListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxListItem.swift; sourceTree = "<group>"; };
+		07E58BB62444889600E44259 /* CheckboxListItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CheckboxListItem.xib; sourceTree = "<group>"; };
+		07E58BBA2444B1BA00E44259 /* LoadableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadableView.swift; sourceTree = "<group>"; };
 		07F50C2C24431704005B103D /* PlaylistsTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistsTableView.swift; sourceTree = "<group>"; };
 		07F50C2E2443170F005B103D /* ArtistsTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistsTableView.swift; sourceTree = "<group>"; };
 		07F50C3024431724005B103D /* AlbumsTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsTableView.swift; sourceTree = "<group>"; };
@@ -63,6 +69,7 @@
 		079227FE24423A5500847F4D /* iTunes2SD */ = {
 			isa = PBXGroup;
 			children = (
+				07E58BB92444B1AE00E44259 /* CustomViews */,
 				07AE7BD32443C1FE002A64C4 /* Settings */,
 				07F50C3224431730005B103D /* HelperClasses */,
 				0792280F244249C400847F4D /* CollectionViewControllers */,
@@ -78,6 +85,7 @@
 		0792280F244249C400847F4D /* CollectionViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				07E58BB42444881000E44259 /* ItemViews */,
 				07F50C2C24431704005B103D /* PlaylistsTableView.swift */,
 				07F50C2E2443170F005B103D /* ArtistsTableView.swift */,
 				07F50C3024431724005B103D /* AlbumsTableView.swift */,
@@ -92,6 +100,23 @@
 				07AE7BD42443C20E002A64C4 /* UserPreferences.swift */,
 			);
 			path = Settings;
+			sourceTree = "<group>";
+		};
+		07E58BB42444881000E44259 /* ItemViews */ = {
+			isa = PBXGroup;
+			children = (
+				07E58BB52444889600E44259 /* CheckboxListItem.swift */,
+				07E58BB62444889600E44259 /* CheckboxListItem.xib */,
+			);
+			path = ItemViews;
+			sourceTree = "<group>";
+		};
+		07E58BB92444B1AE00E44259 /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				07E58BBA2444B1BA00E44259 /* LoadableView.swift */,
+			);
+			path = CustomViews;
 			sourceTree = "<group>";
 		};
 		07F50C3224431730005B103D /* HelperClasses */ = {
@@ -162,6 +187,7 @@
 			files = (
 				0792280424423A5600847F4D /* Assets.xcassets in Resources */,
 				0792280724423A5600847F4D /* Main.storyboard in Resources */,
+				07E58BB82444889600E44259 /* CheckboxListItem.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -175,8 +201,10 @@
 				07F50C3124431724005B103D /* AlbumsTableView.swift in Sources */,
 				07AE7BD52443C20E002A64C4 /* UserPreferences.swift in Sources */,
 				0792280224423A5500847F4D /* ViewController.swift in Sources */,
+				07E58BB72444889600E44259 /* CheckboxListItem.swift in Sources */,
 				07F50C2F2443170F005B103D /* ArtistsTableView.swift in Sources */,
 				0792280024423A5500847F4D /* AppDelegate.swift in Sources */,
+				07E58BBB2444B1BA00E44259 /* LoadableView.swift in Sources */,
 				07F50C2D24431704005B103D /* PlaylistsTableView.swift in Sources */,
 				07F50C3424431746005B103D /* MusicLibraryHelper.swift in Sources */,
 			);

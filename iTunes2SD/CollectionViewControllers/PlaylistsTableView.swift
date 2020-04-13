@@ -15,10 +15,12 @@ class PlaylistsTableView: NSTableView {
 extension PlaylistsTableView: NSTableViewDelegate {
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
         let playlists = MusicLibraryHelper.shared.getAllPlaylists()
-        guard let cellView = tableView.makeView(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "PlaylistCell"), owner: self) as? NSTableCellView else { return nil }
-        cellView.textField?.stringValue = playlists[row].name
         
-        return cellView
+        let view = CheckboxListItem()
+        view.i_itemCounter.stringValue = "\(playlists[row].items.count)"
+        view.b_playlistCheck.title = playlists[row].name
+
+        return view
     }
 }
 
