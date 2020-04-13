@@ -137,5 +137,32 @@ class ViewController: NSViewController {
                 UserPreferences.playlistFormat = .m3u
         }
     }
+    
+    @IBAction func syncClicked(_ sender: Any) {
+        syncPlaylists()
+    }
+    
+    func syncPlaylists() {
+        var selectedPlaylists:[String] = []
+        for index in 0..<v_playlistTableView.numberOfRows {
+            let view = v_playlistTableView.view(atColumn: 0, row: index, makeIfNecessary: false) as! CheckboxListItem
+            
+            if view.b_playlistCheck.state == .on {
+                selectedPlaylists.append(view.b_playlistCheck.title)
+            }
+        }
+        
+        let selectedPlaylistArray = MusicLibraryHelper.shared.getAllPlaylists().filter {
+            selectedPlaylists.contains($0.name)
+        }
+        
+        
+        // MARK: - Perform file copy operations
+        FileHelper.shared.createPlaylistFiles(playlists: selectedPlaylistArray)
+        
+        if !UserPreferences.onlyExportPlaylists {
+            FileHelper.shared.copyPlaylistFiles(playlists: selectedPlaylistArray)
+        }
+    }
 }
 

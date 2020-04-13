@@ -15,6 +15,7 @@
 		07E58BB72444889600E44259 /* CheckboxListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E58BB52444889600E44259 /* CheckboxListItem.swift */; };
 		07E58BB82444889600E44259 /* CheckboxListItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07E58BB62444889600E44259 /* CheckboxListItem.xib */; };
 		07E58BBB2444B1BA00E44259 /* LoadableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E58BBA2444B1BA00E44259 /* LoadableView.swift */; };
+		07E58BBD2444E1B400E44259 /* FileHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E58BBC2444E1B400E44259 /* FileHelper.swift */; };
 		07F50C2D24431704005B103D /* PlaylistsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F50C2C24431704005B103D /* PlaylistsTableView.swift */; };
 		07F50C2F2443170F005B103D /* ArtistsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F50C2E2443170F005B103D /* ArtistsTableView.swift */; };
 		07F50C3124431724005B103D /* AlbumsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F50C3024431724005B103D /* AlbumsTableView.swift */; };
@@ -33,6 +34,7 @@
 		07E58BB52444889600E44259 /* CheckboxListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxListItem.swift; sourceTree = "<group>"; };
 		07E58BB62444889600E44259 /* CheckboxListItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CheckboxListItem.xib; sourceTree = "<group>"; };
 		07E58BBA2444B1BA00E44259 /* LoadableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadableView.swift; sourceTree = "<group>"; };
+		07E58BBC2444E1B400E44259 /* FileHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileHelper.swift; sourceTree = "<group>"; };
 		07F50C2C24431704005B103D /* PlaylistsTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistsTableView.swift; sourceTree = "<group>"; };
 		07F50C2E2443170F005B103D /* ArtistsTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistsTableView.swift; sourceTree = "<group>"; };
 		07F50C3024431724005B103D /* AlbumsTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsTableView.swift; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				07F50C3324431746005B103D /* MusicLibraryHelper.swift */,
+				07E58BBC2444E1B400E44259 /* FileHelper.swift */,
 			);
 			path = HelperClasses;
 			sourceTree = "<group>";
@@ -207,6 +210,7 @@
 				07E58BBB2444B1BA00E44259 /* LoadableView.swift in Sources */,
 				07F50C2D24431704005B103D /* PlaylistsTableView.swift in Sources */,
 				07F50C3424431746005B103D /* MusicLibraryHelper.swift in Sources */,
+				07E58BBD2444E1B400E44259 /* FileHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

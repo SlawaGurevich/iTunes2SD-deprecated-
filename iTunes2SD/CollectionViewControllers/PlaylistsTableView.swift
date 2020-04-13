@@ -26,7 +26,6 @@ extension PlaylistsTableView: NSTableViewDelegate {
 
 extension PlaylistsTableView: NSTableViewDataSource {
     func numberOfRows(in tableView: NSTableView) -> Int {
-        print(MusicLibraryHelper.shared.getAllPlaylists())
         return MusicLibraryHelper.shared.getAllPlaylists().count
     }
 }
