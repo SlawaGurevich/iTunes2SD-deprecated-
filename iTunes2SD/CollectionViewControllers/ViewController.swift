@@ -143,7 +143,7 @@ class ViewController: NSViewController {
     }
     
     @IBAction func syncClicked(_ sender: Any) {
-        syncPlaylists()
+        sync()
     }
     
     func resetSlider(value: Double) {
@@ -156,7 +156,7 @@ class ViewController: NSViewController {
             NotificationCenter.observe(name: .ItemCopied) {
                 if(self.l_progressBar.doubleValue < self.l_progressBar.maxValue) {
                     self.l_progressBar.increment(by: 1.0)
-                    print("copiedItem")
+                    print("\(self.l_progressBar.doubleValue) \\ \(self.l_progressBar.maxValue)")
                 }
             }
         )
@@ -168,7 +168,7 @@ class ViewController: NSViewController {
         }
     }
     
-    func syncPlaylists() {
+    func sync() {
         if MusicLibraryHelper.shared.reloadData() {
             var selectedPlaylists:[String] = []
             for index in 0..<v_playlistTableView.numberOfRows {
@@ -192,12 +192,7 @@ class ViewController: NSViewController {
             
             addNotificationObservers()
             
-            // Perform file copy operations
-            FileHelper.shared.createPlaylistFiles(playlists: selectedPlaylistArray)
-            
-            if !UserPreferences.onlyExportPlaylists {
-                FileHelper.shared.copyPlaylistFiles(playlists: selectedPlaylistArray)
-            }
+            FileHelper.shared.sync(fromPlaylists: selectedPlaylistArray, skipCopy: UserPreferences.onlyExportPlaylists)
             
             removeNotificationOberservers()
         }
